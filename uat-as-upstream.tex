@@ -1,6 +1,7 @@
 \documentclass[11pt,a4paper]{ivoa}
 \input tthdefs
 
+\setlength{\marginparwidth}{2cm}
 \usepackage{todonotes}
 \usepackage{sidecap}
 
@@ -8,8 +9,6 @@
 \lstset{flexiblecolumns=true,numberstyle=\small,showstringspaces=False,
   identifierstyle=\texttt,defaultdialect=[latex]tex,language=tex}
 
-\definecolor{termcolor}{rgb}{0.6,0.1,0.1}
-\newcommand{\vocterm}[1]{\emph{\color{termcolor}#1}}
 
 \title{Adopting the UAT as an IVOA vocabulary}
 
@@ -166,8 +165,8 @@ cycle become necessary.
 
 The program maintains a stable mapping between UAT (numeric) concept
 URIs and IVOA (human-readable) term URIs by parsing the RDF/XML
-representation from the IVOA RDF repository (in \verb|ConceptMapping|'s
-\verb|_fill_from_ivoa| method) and will only create new terms on the
+representation from IVOA's RDF repository
+(in \verb|ConceptMapping|'s \verb|_fill_from_ivoa| method) and will only create new terms on the
 IVOA side when new concept URIs are found in the upstream UAT.
 
 The new terms are generated (in the \verb|label_to_term| function) by
@@ -322,7 +321,7 @@ list of the matching resources.
 
 \begin{SCfigure}
 \includegraphics[width=8cm]{sembarebro.png}
-\caption{A screenshot of a part of a sembarebro session; a part of the
+\caption{\raggedright A screenshot of a part of a sembarebro session; a part of the
 UAT graph is shown, arrows going from wider to narrower terms.  VO
 resources exist for the concepts with IVOA logos, and users can click on
 labels to open up wider and narrower concepts.}
@@ -409,7 +408,7 @@ a new PEN.
 
 Editorial changes only.
 
-\bibliography{ivoatex/ivoabib,ivoatex/docrepo,local}
+{\hbadness=2000\bibliography{ivoatex/ivoabib,ivoatex/docrepo,local}}
 
 
 \end{document}
